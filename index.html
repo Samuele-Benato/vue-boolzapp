@@ -109,13 +109,13 @@
           <!-- USER CHATS -->
           <div class="user-chats">
             <!-- SINGLE CHAT -->
-            <div class="single-chat p-2">
+            <div v-for="(contact,index) in contacts" class="single-chat p-2">
               <div class="image-container">
-                <img src="./img/avatar_1.jpg" alt="" />
+                <img :src="contact.avatar" alt="" />
               </div>
 
               <div class="mb-auto px-2">
-                <span class="fw-semibold">Michele</span>
+                <span class="fw-semibold">{{contact.name}}</span>
                 <div class="text-muted">Ultimo messaggio inviato</div>
               </div>
               <div class="ms-auto mb-auto">12:00</div>
