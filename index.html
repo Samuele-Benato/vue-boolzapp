@@ -43,9 +43,9 @@
     <div class="container" id="app">
       <div class="app-container">
         <!-- PERSONAL ACCOUNT -->
-        <header class="personal-account p-2">
+        <header class="personal-account">
           <!-- LEFT HEADER -->
-          <div class="left-header">
+          <div class="left-header p-2">
             <div class="image-container">
               <img src="./img/avatar_io.jpg" alt="" />
             </div>
@@ -60,7 +60,7 @@
           </div>
 
           <!-- RIGHT HEADER-->
-          <div class="right-header">
+          <div class="right-header p-2">
             <div class="image-container mx-2">
               <img src="./img/avatar_1.jpg" alt="" />
             </div>
@@ -124,7 +124,35 @@
         </div>
 
         <!-- SCREEN CHAT RIGHT -->
-        <div id="screen-chat"></div>
+        <div id="screen-chat">
+          <!-- MAIN CHAT -->
+          <div class="main-chat">
+            <div class="send-message ms-auto pt-2 pb-3 px-2 m-2">
+              <span>Hai portato fuori il cane?</span>
+              <span class="absolute-time-message pe-1">15:30</span>
+            </div>
+            <div class="recive-message pt-2 pb-3 px-2 m-2">
+              <span>Nun scassà u cazz</span>
+              <span class="absolute-time-message pe-1">17:30</span>
+            </div>
+          </div>
+
+          <!-- FOOTER CHAT -->
+          <div class="footer-chat p-2">
+            <div class="px-3"><i class="fa-regular fa-face-smile"></i></div>
+            <div class="flex-grow-1">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Scrivi un messaggio"
+                aria-label="write a message"
+              />
+            </div>
+            <div class="ms-auto px-3">
+              <i class="fa-solid fa-microphone"></i>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
