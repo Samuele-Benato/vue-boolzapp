@@ -163,6 +163,10 @@ const contacts = [
   },
 ];
 
+let date = new Date();
+let minute = date.getMinutes();
+let hour = date.getHours();
+
 const app = createApp({
   data() {
     return {
@@ -180,7 +184,7 @@ const app = createApp({
     sentNewMessage() {
       if (this.inputMessage.trim().length > 0) {
         const newMessage = {
-          date: "oggi",
+          date: hour + " : " + minute,
           message: this.inputMessage.trim(),
           status: "sent",
         };
@@ -193,7 +197,7 @@ const app = createApp({
 
     autoReceivedMessage() {
       const newMessage = {
-        date: "oggi",
+        date: hour + " : " + minute,
         message: "daje",
         status: "received",
       };
