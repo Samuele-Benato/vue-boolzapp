@@ -169,7 +169,23 @@ const app = createApp({
       contacts,
       activeChat: 0,
       filterSerch: "",
+      inputMessage: "",
+      newMessage: [
+        {
+          date: new Date(),
+          message: "",
+          status: "sent",
+        },
+      ],
     };
   },
-  methods: {},
+  methods: {
+    goTo(index) {
+      this.activeChat = index;
+    },
+
+    sentNewMessage(activeChat) {
+      this.contacts[this.activeChat].messages.push(this.newMessage);
+    },
+  },
 }).mount("#app");

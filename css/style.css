@@ -120,11 +120,6 @@ img {
 
 /* MAIN SCREEN CHAT */
 
-.main-chat {
-  display: flex;
-  flex-direction: column;
-}
-
 .send-message,
 .recive-message {
   position: relative;
@@ -134,7 +129,6 @@ img {
 
 .send-message {
   background-color: #d5f9ba;
-
   margin-left: auto;
 }
 

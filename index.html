@@ -61,15 +61,13 @@
 
           <!-- RIGHT HEADER-->
           <div class="right-header p-2">
-            <div v-for="contact in contacts">
-              <div class="image-container mx-2">
-                <img :src="contacts[activeChat].avatar" alt="" />
-              </div>
+            <div class="image-container mx-2">
+              <img :src="contacts[activeChat].avatar" alt="" />
+            </div>
 
-              <div class="px-2">
-                <div class="fw-semibold">{{contacts[activeChat].name}}</div>
-                <div class="text-muted">Ultimo accesso oggi alle 12:00</div>
-              </div>
+            <div class="px-2">
+              <div class="fw-semibold">{{contacts[activeChat].name}}</div>
+              <div class="text-muted">Ultimo accesso oggi alle 12:00</div>
             </div>
 
             <!-- ICONS -->
@@ -114,7 +112,7 @@
             <!-- SINGLE CHAT -->
             <div
               v-for="(contact,index) in contacts"
-              @click="activeChat"
+              @click="goTo(index)"
               v-show="(contact.name.toLowerCase()).includes(filterSerch.toLowerCase())"
               class="single-chat p-2 active-chat"
             >
@@ -134,11 +132,11 @@
         <!-- SCREEN CHAT RIGHT -->
         <div id="screen-chat">
           <!-- MAIN CHAT -->
-          <div class="main-chat">
+          <div class="main-chat p-3">
             <div
               v-for="(message,index) in contacts[activeChat].messages"
               :class="(message.status == 'sent') ? 'send-message' : 'recive-message' "
-              class="pt-2 pb-3 px-2 m-2"
+              class="pt-2 pb-3 px-2 mb-2"
             >
               <span>{{ message.message }}</span>
               <span class="absolute-time-message pe-1">
@@ -156,6 +154,8 @@
                 type="text"
                 placeholder="Scrivi un messaggio"
                 aria-label="write a message"
+                v-model="inputMessage"
+                @keyup.enter="sentNewMessage(activeChat)"
               />
             </div>
             <div class="ms-auto px-3">
