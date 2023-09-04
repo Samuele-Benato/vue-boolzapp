@@ -168,6 +168,7 @@ const app = createApp({
     return {
       contacts,
       activeChat: 0,
+      filterSerch: "",
     };
   },
   methods: {},

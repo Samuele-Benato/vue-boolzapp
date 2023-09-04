@@ -11,6 +11,11 @@ img {
 .app-container {
   display: flex;
   height: 90vh;
+
+  min-width: 800px;
+  min-height: 900px;
+  max-height: 1000px;
+
   margin-top: 50px;
   box-shadow: 5px 5px 5px 5px #b1b1b1;
   position: relative;
@@ -32,6 +37,16 @@ img {
   width: 65%;
 }
 
+.personal-account,
+.chat-keyboard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 80px;
+  width: 100%;
+}
+
 /* SIDEBAR */
 
 #sidebar {
@@ -39,6 +54,7 @@ img {
   padding-top: 80px;
   border-right: 2px solid #b1b1b1;
   background: #eaeaea;
+  overflow: scroll;
 }
 
 .image-container {
@@ -53,16 +69,6 @@ img {
   color: #bbb4b1;
 }
 
-.personal-account,
-.chat-keyboard {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  height: 80px;
-  width: 100%;
-}
-
 .left-header,
 .right-header,
 .personal-account,
@@ -74,10 +80,16 @@ img {
 
 .desktop-notifications {
   background-color: #8edafc;
+  max-height: 84px;
+  overflow: hidden;
 }
 
 .bg-bell {
   border-radius: 50%;
+  height: 50px;
+  width: 50px;
+
+  text-align: center;
   overflow: hidden;
   background-color: #f2fbff;
   color: #8edafc;
@@ -92,15 +104,26 @@ img {
   align-items: center;
 }
 
+.active-chat:hover {
+  background-color: rgba(240, 240, 240, 0.5);
+  scale: 1.02;
+  box-shadow: 2px 2px rgb(240, 240, 240);
+}
 /* SCREEN CHAT */
 
 #screen-chat {
   background-image: url("../img/mine.jpg");
   padding-top: 80px;
   width: 65%;
+  overflow: scroll;
 }
 
 /* MAIN SCREEN CHAT */
+
+.main-chat {
+  display: flex;
+  flex-direction: column;
+}
 
 .send-message,
 .recive-message {
@@ -111,6 +134,8 @@ img {
 
 .send-message {
   background-color: #d5f9ba;
+
+  margin-left: auto;
 }
 
 .recive-message {
