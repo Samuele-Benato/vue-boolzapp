@@ -170,13 +170,6 @@ const app = createApp({
       activeChat: 0,
       filterSerch: "",
       inputMessage: "",
-      newMessage: [
-        {
-          date: new Date(),
-          message: "",
-          status: "sent",
-        },
-      ],
     };
   },
   methods: {
@@ -184,8 +177,28 @@ const app = createApp({
       this.activeChat = index;
     },
 
-    sentNewMessage(activeChat) {
-      this.contacts[this.activeChat].messages.push(this.newMessage);
+    sentNewMessage() {
+      if (this.inputMessage.trim().length > 0) {
+        const newMessage = {
+          date: "oggi",
+          message: this.inputMessage.trim(),
+          status: "sent",
+        };
+        this.contacts[this.activeChat].messages.push(newMessage);
+
+        setTimeout(this.autoReceivedMessage, 2000);
+      }
+      this.inputMessage = "";
+    },
+
+    autoReceivedMessage() {
+      const newMessage = {
+        date: "oggi",
+        message: "daje",
+        status: "received",
+      };
+
+      this.contacts[this.activeChat].messages.push(newMessage);
     },
   },
 }).mount("#app");
