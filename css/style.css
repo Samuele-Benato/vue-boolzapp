@@ -119,12 +119,17 @@ img {
 }
 
 /* MAIN SCREEN CHAT */
+.main-chat {
+  display: flex;
+  flex-direction: column;
+}
 
 .send-message,
 .recive-message {
   position: relative;
   border-radius: 10px 20px;
-  width: 25%;
+  display: inline-block;
+  min-width: 7%;
 }
 
 .send-message {
@@ -134,6 +139,7 @@ img {
 
 .recive-message {
   background-color: #ffffff;
+  margin-right: auto;
 }
 
 .absolute-time-message {

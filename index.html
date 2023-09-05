@@ -138,10 +138,12 @@
               :class="(message.status == 'sent') ? 'send-message' : 'recive-message' "
               class="pt-2 pb-3 px-2 mb-2"
             >
-              <span>{{ message.message }}</span>
-              <span class="absolute-time-message pe-1">
-                {{ message.date }}
-              </span>
+              <div>
+                <span>{{ message.message }}</span>
+                <span class="absolute-time-message pe-1">
+                  {{ message.date }}
+                </span>
+              </div>
             </div>
           </div>
 
