@@ -67,7 +67,11 @@
 
             <div class="px-2">
               <div class="fw-semibold">{{contacts[activeChat].name}}</div>
-              <div class="text-muted">Ultimo accesso oggi alle 12:00</div>
+              <div class="text-muted">
+                Ultimo accesso oggi alle
+                {{contacts[activeChat].messages[contacts[activeChat].messages.length
+                -1].date}}
+              </div>
             </div>
 
             <!-- ICONS -->
@@ -122,9 +126,13 @@
 
               <div class="mb-auto px-2">
                 <span class="fw-semibold">{{contact.name}}</span>
-                <div class="text-muted">Ultimo messaggio inviato</div>
+                <div class="text-muted">
+                  {{contact.messages[contact.messages.length -1].message}}
+                </div>
               </div>
-              <small class="ms-auto mb-auto">12:00</small>
+              <small class="ms-auto mb-auto"
+                >{{contact.messages[contact.messages.length -1].date}}</small
+              >
             </div>
           </div>
         </div>
@@ -138,12 +146,25 @@
               :class="(message.status == 'sent') ? 'send-message' : 'recive-message' "
               class="pt-2 pb-3 px-2 mb-2"
             >
-              <div>
-                <span>{{ message.message }}</span>
-                <span class="absolute-time-message pe-1">
-                  {{ message.date }}
-                </span>
-              </div>
+              <span
+                >{{ message.message }}
+                <div class="dropdown">
+                  <button
+                    class="btn dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  ></button>
+                  <ul class="dropdown-menu">
+                    <li @click="deleteMessage(index)">
+                      <a class="dropdown-item" href="#">Delete</a>
+                    </li>
+                  </ul>
+                </div>
+              </span>
+              <span class="absolute-time-message pe-1">
+                {{ message.date }}
+              </span>
             </div>
           </div>
 

@@ -163,9 +163,9 @@ const contacts = [
   },
 ];
 
-const date = new Date();
-const minute = date.getMinutes();
-const hour = date.getHours();
+let date = new Date();
+let minute = date.getMinutes();
+let hour = date.getHours();
 
 const app = createApp({
   data() {
@@ -182,6 +182,8 @@ const app = createApp({
     },
 
     sentNewMessage() {
+      if (hour <= 9) hour = "0" + hour;
+      if (minute <= 9) minute = "0" + minute;
       if (this.inputMessage.trim().length > 0) {
         const newMessage = {
           date: hour + " : " + minute,
@@ -207,6 +209,10 @@ const app = createApp({
 
     lastMessage() {
       this.contacts[this.activeChat].messages.push(newMessage);
+    },
+
+    deleteMessage(index) {
+      this.contacts[this.activeChat].messages.splice(index, 1);
     },
   },
 }).mount("#app");

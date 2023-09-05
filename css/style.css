@@ -115,7 +115,7 @@ img {
   background-image: url("../img/mine.jpg");
   padding-top: 80px;
   width: 65%;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 /* MAIN SCREEN CHAT */
@@ -129,7 +129,7 @@ img {
   position: relative;
   border-radius: 10px 20px;
   display: inline-block;
-  min-width: 7%;
+  min-width: 100px;
   max-width: 65%;
 }
 
