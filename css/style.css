@@ -61,7 +61,8 @@ img {
   border-radius: 50%;
   overflow: hidden;
 
-  width: 50px;
+  min-width: 50px;
+  max-width: 50px;
   aspect-ratio: 1;
 }
 
@@ -148,6 +149,16 @@ img {
   right: 0;
   bottom: 0;
   font-size: 0.75rem;
+}
+
+.dropdown {
+  display: none;
+}
+
+.dropdown-block :hover {
+  .dropdown {
+    display: block;
+  }
 }
 
 /* FOOTER SCREEN CHAT */

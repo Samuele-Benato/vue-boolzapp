@@ -69,8 +69,7 @@
               <div class="fw-semibold">{{contacts[activeChat].name}}</div>
               <div class="text-muted">
                 Ultimo accesso oggi alle
-                {{contacts[activeChat].messages[contacts[activeChat].messages.length
-                -1].date}}
+                {{contacts[activeChat].messages.at(-1)?.date }}
               </div>
             </div>
 
@@ -127,11 +126,11 @@
               <div class="mb-auto px-2">
                 <span class="fw-semibold">{{contact.name}}</span>
                 <div class="text-muted">
-                  {{contact.messages[contact.messages.length -1].message}}
+                  {{contact.messages.at(-1)?.message}}
                 </div>
               </div>
-              <small class="ms-auto mb-auto"
-                >{{contact.messages[contact.messages.length -1].date}}</small
+              <small class="ms-auto mb-auto">
+                {{contact.messages.at(-1)?.date}}</small
               >
             </div>
           </div>
@@ -144,9 +143,9 @@
             <div
               v-for="(message,index) in contacts[activeChat].messages"
               :class="(message.status == 'sent') ? 'send-message' : 'recive-message' "
-              class="pt-2 pb-3 px-2 mb-2"
+              class="pt-2 pb-3 px-2 mb-2 dropdown-block"
             >
-              <span
+              <span class=""
                 >{{ message.message }}
                 <div class="dropdown">
                   <button
