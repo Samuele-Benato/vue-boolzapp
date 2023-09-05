@@ -130,6 +130,7 @@ img {
   border-radius: 10px 20px;
   display: inline-block;
   min-width: 7%;
+  max-width: 65%;
 }
 
 .send-message {
